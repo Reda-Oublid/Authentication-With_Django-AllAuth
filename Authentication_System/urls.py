@@ -18,15 +18,12 @@ from django.contrib import admin
 from django.shortcuts import render
 from django.urls import path, include
 
-
-def home(request):
-    return render(request, 'home.html')
-
+import Authentication_manager.views
 
 urlpatterns = [
-    path('', home),
+    path('', Authentication_manager.views.home),
     # path('user_manager/', include('user_manager.urls')),
-    # path('authentication_manager/', include('authentication_manager.urls')),
+    path('Authentication_manager/', include('Authentication_manager.urls')),
     path('admin/', admin.site.urls),
-    path('accounts/', include('allauth.urls'))
+    path('account/', include('allauth.urls'))
 ]

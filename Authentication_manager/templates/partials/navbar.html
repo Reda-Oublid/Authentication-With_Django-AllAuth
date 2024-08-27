@@ -1,0 +1,29 @@
+<body>
+	<header>
+
+            <div class="logo-container">
+                <h1 class="logo">PartShare</h1>
+                <i class="fa-solid fa-desktop " ></i>
+            </div>
+		    <nav>
+			    <ul class="nav_links">
+			    	<li><a href="{%url 'home' %}">Home</a></li>
+			    	<li><a href="{%url 'home' %}">about</a></li>
+			    </ul>
+		    </nav>
+            {% if user.is_authenticated %}
+                <div class="is_auth">
+			      <a href="{%url 'profile' user.username %}" class="cta"><i class="fa-solid fa-user"></i></a>
+			      <a href="{%url 'account_logout' %}" class="cta">Logout</a>
+                </div>
+            {% else %}
+		        <div class="buttons">
+                    <a href="{%url 'account_signup' %}" class="cta"><button>Signup</button></a>
+                    <a href="{%url 'account_login' %}" class="cta"><button>Login</button></a>
+                </div>
+            {% endif %}
+
+
+	</header>
+
+</body>

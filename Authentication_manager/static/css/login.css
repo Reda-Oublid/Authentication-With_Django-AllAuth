@@ -1,0 +1,225 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital@0;1&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Charmonman:wght@400;700&family=Montserrat:ital,wght@0,600;1,600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,550;1,550&display=swap');
+
+/*---------------------------------Main Area---------------------------------*/
+*{
+	box-sizing: border-box;
+	margin:0;
+	padding:0;
+	background-color:transparent;
+}
+
+.lgcontainer{
+	margin: 3.5% auto;
+	padding: 0;
+	width: 60%;
+	height:85vh;
+	display: flex;
+	justify-content: space-between;
+	align-items:center;
+	background-color: rgba(8, 15, 17, 0.8);
+	border:2px solid black;
+	border-radius: 45px;
+	box-shadow: 1px 8px 8px rgb(70, 70, 77);
+
+}
+/*---------------------------------Right Area---------------------------------*/
+.login_container{
+	background: linear-gradient(90deg, rgba(192, 250, 255, 0.32), rgba(47, 79, 79, 0.09) 85%);
+	width: 60%;
+	height: 100%;
+	margin:0;
+	padding:0% 0%;
+	border-left: none;
+	border-radius: 90px 40px  40px 90px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	flex-direction: column;
+
+}
+
+.login_container form{
+	width: 100%;
+	padding-left:15px;
+	padding-bottom: 15px;
+	display:flex;
+	justify-content: center;
+	align-items:center;
+	flex-direction: column;
+
+	background-color:transparent;
+
+}
+.login_container h1{
+	color: #ffffff;
+	cursor:pointer;
+	font-family: "Charmonman";
+	font-weight:bolder;
+	font-size:42px;
+	font-style: oblique;
+
+	transition: all 0.5s ease 0s;
+}
+.login_container h1:hover{
+	color: deepskyblue;
+    text-shadow:-3px 7px 6px deepskyblue;
+}
+.login_inputs{
+	width: 80%;
+	padding: 12px 8%;
+	margin: 0 10%;
+	border:none;
+	border-radius: 30px;
+	background-color: ivory;
+	color: black;
+	outline: none;
+	font-weight: bold;
+	transition: all 0.5s ease 0s;
+}
+
+.login_inputs:hover{
+
+	background: linear-gradient(90deg, #b5f5fa,dodgerblue);
+	box-shadow:-4px 4px 8px #2cafd7;
+
+}
+
+.user__field,.password__field{
+	display: inline;
+	width: 100%;
+	margin: 10px 0;
+	border:none;
+	background-color: transparent;
+	position: relative;
+
+}
+.login_icon{
+	position: absolute;
+	top: 50%;
+	left: 12%;
+	color: black;
+}
+
+
+/*---------------Submit Button/Reset_Password_Link-----------*/
+
+.lgbuttons{
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+	align-items: center;
+	width: 100%;
+	padding: 15px 0;
+	background-color: transparent;
+	border: none;
+}
+.lgbuttons a{
+	text-decoration: none;
+	background-color: transparent;
+	padding: 5px 10px;
+	border: none;
+	color: #ffffff;
+	transition: all 0.1s linear 0s;
+}
+.lgbuttons a:hover{
+	text-decoration: none;
+	background-color: transparent;
+	border-radius: 15px;
+	border: 5px solid grey;
+	color: #bebdbd;
+}
+
+.lgbuttons button{
+	padding: 10px 25px;
+	width: 65%;
+	background: linear-gradient(90deg, dodgerblue, #b5f5fa);
+
+	border:none;
+	border-radius: 50px 4px 50px 4px;
+	cursor: pointer;
+	color: black;
+	font-weight: bold;
+	transition: all 0.4s ease 0s;
+}
+.lgbuttons button:hover{
+
+	background: linear-gradient(90deg, #b5f5fa,dodgerblue);
+	box-shadow:-4px 4px 8px #2cafd7;
+	border-radius: 4px 50px 4px 50px;
+}
+
+/*----------------------------------------Left Area--------------------------------------------------------*/
+.left{
+	width: 40%;
+	height: 100%;
+	padding-right: 10px;
+	padding-bottom: 30%;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	flex-direction: column;
+	border-radius: 45px 90px 90px 45px;
+	background-image: url("../assets/martin-katler-7wCxlBfGMdk-unsplash.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;
+
+
+}
+/*********** Left Area content **********/
+
+/*-------Logo------*/
+.lglogo{
+	color: #ffffff;
+	cursor:pointer;
+	font-family: "Charmonman";
+	margin-right: 5%;
+	font-weight:bolder;
+	font-size:42px;
+	font-style: oblique;
+	transition: all 0.5s ease 0s;
+
+}
+.lglogo:hover{
+	color:deepskyblue;
+	font-size: 42px;
+	text-shadow:1px 8px 8px #90568c;
+}
+
+hr{
+	width: 95%;
+	margin-left: 6%;
+	height: 7px;
+	background-color: #ffffff;
+	border-radius: 15px;
+	border: 1px solid ;
+	box-shadow:1px 3px 8px #2c7cd7;
+	transition: all 0.5s ease 0s;
+}
+
+hr:hover{
+
+
+}
+
+/*-------Text------*/
+
+.left .text h1 , span{
+	cursor:pointer;
+	text-align: center;
+	color: white;
+	font-family: "Playfair Display",serif;
+	font-weight: 500px;
+	font-size:40px;
+	text-transform: uppercase;
+	transition: all 0.5s ease 0s;
+	background-color: transparent;
+	line-height: 1.5;
+}
+
+.left .text span:hover ,.left .text h1:hover{
+	font-size:43px;
+	text-shadow: 1px 4px 6px #90568c;
+	text-emphasis: lavender;
+}
