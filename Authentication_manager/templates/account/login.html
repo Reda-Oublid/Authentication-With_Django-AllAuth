@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}Sign In{% endblock %}
+{% block extra_css %}
+    <link href="{% static 'css/login.css' %}" rel="stylesheet">
+{% endblock %}
+{% block content %}
+<body>
+	<div class="lgcontainer">
+		<div class="left">
+			<h1 class="lglogo">PartShare<hr></h1>
+			<div class="text"><h1>Welcome To Our Blog! <span>Please   Log in.</span></h1></div>
+		</div>
+		<div class="login_container">
+            <div><h1>Login</h1></div>
+            {% if form.errors %}
+                <p>Invalid username or password.</p>
+            {% endif %}
+			<form method="post" action="{% url 'account_login' %}">
+                {% csrf_token %}
+				<div class="user__field">
+					<i class="login_icon fa-solid fa-user fa-lg"></i>
+					<input class="login_inputs" type="text" placeholder="username" id="username" name="login">
+				</div>
+				<div class="password__field">
+					<i class=" login_icon fa-solid fa-lock fa-lg"></i>
+					<input class="login_inputs" type="password" placeholder="password" id="password" name="password">
+				</div>
+				<div class="lgbuttons">
+					<button type="submit">Login <i class="fa-solid fa-chevron-right fa-l" style="color: black;background-color:transparent;margin-left: 75%;!important;"></i></button>
+				    <a href="#">Don't Remember Your Password ?</a>
+			    </div>
+			</form>
+            <div></div>
+		</div>
+	</div>
+</body>
+{% endblock content %}

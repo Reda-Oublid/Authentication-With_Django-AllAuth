@@ -1,0 +1,108 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital@0;1&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Charmonman:wght@400;700&family=Montserrat:ital,wght@0,600;1,600&display=swap');
+*{
+	box-sizing: border-box;
+	margin:0;
+	padding:0;
+
+}
+body{
+    background-image: url("../assets/alienware-Hpaq-kBcYHk-unsplash.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-attachment: fixed;
+
+}
+
+
+header li,header a,header button,header h1 {
+	font-family:"Montserrat",sans-serif;
+	font-weight: bold;
+	font-size: 20px;
+	color:white;
+	text-decoration: none;
+}
+
+header{
+    position: fixed;  /* Fixes the navbar at the top */
+    top: 0;  /* Positions it at the very top of the page */
+    width: 100%;  /* Ensures the navbar spans the entire width of the viewport */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 2%;
+    border-bottom: 1px solid transparent;
+    background-color: rgba(0, 0, 3, 0.74);
+    z-index: 1000;  /* Ensures the navbar stays above other elements */
+}
+
+.nav_links{
+	list-style: none;
+}
+.nav_links li{
+	display:inline-block;
+	padding:0 20px;
+}
+.logo-container{
+	display:flex;
+	justify-content: flex-start;
+	align-items: center;
+	gap: 15px;
+
+}
+.logo-container i{
+	font-size: 26px;
+    color: white;
+    margin-right: 10px;
+    cursor: pointer;
+    transition: all 0.5s ease 0s;
+}
+.logo-container i:hover{
+    color: deepskyblue;
+}
+
+
+.logo{
+	background-color: transparent;
+	cursor:pointer;
+	font-family: "Charmonman";
+	padding: 5px 5px;
+	font-weight:bolder;
+	font-size:42px;
+	font-style: oblique;
+	text-shadow:3px 7px 6px dodgerblue;
+	transition: all 0.5s ease 0s;
+}
+.logo:hover{
+	color:deepskyblue;
+	text-shadow:-3px 7px 6px deepskyblue;
+}
+
+.nav_links li a{
+	transition: all 0.5s ease 0s;
+}
+.nav_links li a:hover {
+	color: deepskyblue;
+}
+
+button{
+	padding: 10px 25px;
+	background-color: deepskyblue;
+	border:none;
+	border-radius: 50px 4px 50px 4px;
+	cursor: pointer;
+	transition: all 0.4s ease 0s;
+}
+button:hover{
+	background-color: #03A6A6;
+	box-shadow:-4px 4px 8px #04BFBF;
+	border-radius: 4px 50px 4px 50px;
+}
+.is_auth a{
+	margin-left: 25px;
+	transition: all 0.4s ease 0s;
+}
+.is_auth a:hover{
+	color: deepskyblue;
+
+}
