@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+{% load socialaccount %}
+{% load static %}
+{% block title %}Sign up{% endblock %}
+{% block extra_css %}
+    <link href="{% static 'css/login.css' %}" rel="stylesheet">
+{% endblock %}
+{% block content %}
+<body>
+	<div class="lgcontainer">
+		<div class="left">
+			<h1 class="lglogo">PartShare<hr></h1>
+			<div class="text"><h1>Welcome To Our Blog! <span>Please   Sign Up.</span></h1></div>
+		</div>
+		<div class="login_container">
+            <div><h1>SignUp<hr></h1></div>
+            {% if form.errors %}
+                <h5 style="color: white;">{{ form.errors }}</h5>
+            {% endif %}
+            <div class="lgbuttons">
+                <a href="{% url 'account_login' %}">Already  Have an Account? Login!</a>
+            </div>
+			<form method="post" action="{% url 'account_signup' %}">
+                {% csrf_token %}
+				<div class="user__field">
+					<i class="login_icon fa-solid fa-user fa-lg"></i>
+					<input class="login_inputs" type="text" placeholder="username" id="username" name="username">
+				</div>
+                <div class="user__field">
+					<i class="login_icon fa-solid fa-envelope fa-lg"></i>
+					<input class="login_inputs" type="email" placeholder="Email" id="email" name="email">
+				</div>
+				<div class="password__field">
+					<i class=" login_icon fa-solid fa-lock fa-lg"></i>
+					<input class="login_inputs" type="password" placeholder="password" id="password1" name="password1">
+				</div>
+                <div class="password__field">
+					<i class=" login_icon fa-solid fa-lock fa-lg"></i>
+					<input class="login_inputs" type="password" placeholder="Confirm password" id="password2" name="password2">
+				</div>
+				<div class="lgbuttons">
+					<button type="submit">Sign Up <i class="fa-solid fa-chevron-right fa-l" style="color: black;background-color:transparent;margin-left: 75%;!important;"></i></button>
+			    </div>
+			</form>
+            <div class="SocialAccounts">
+                <div class="social_icons">
+                    <a href="{% provider_login_url 'github' %}"><i class="fa-brands fa-github fa-2xl" ></i></a>
+                    <a href="{% provider_login_url 'google' %}"><i class="fa-brands fa-google fa-2xl" style="color: #DB4437"></i></a>
+                    <a href="#"><i class="fa-brands fa-x-twitter fa-2xl" style="color: #fcfcfc ;"></i></a>
+                </div>
+            </div>
+
+		</div>
+	</div>
+</body>
+{% endblock %}
