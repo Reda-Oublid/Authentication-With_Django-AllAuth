@@ -41,7 +41,8 @@ INSTALLED_APPS = [
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
-    'allauth.socialaccount.providers.github'
+    'allauth.socialaccount.providers.github',
+    'allauth.socialaccount.providers.google',
 
 ]
 SITE_ID = 1
@@ -57,7 +58,16 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'Authentication_System.urls'
-LOGIN_REDIRECT_URL = '/'
+# Redirect after successful signup
+ACCOUNT_SIGNUP_REDIRECT_URL = '/'  # or the URL name of your homepage
+
+# Redirect after successful login
+LOGIN_REDIRECT_URL = '/'  # or the URL name of your homepage
+
+# Redirect after successful logout
+LOGOUT_REDIRECT_URL = '/'  # or the URL name of your landing page
+# Email verification
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
@@ -81,18 +91,6 @@ AUTHENTICATION_BACKENDS = [
     'allauth.account.auth_backends.AuthenticationBackend',
 ]
 
-SOCIALACCOUNT_PROVIDERS = {
-    'github': {
-        # For each OAuth based provider, either add a ``SocialApp``
-        # (``socialaccount`` app) containing the required client
-        # credentials, or list them here:
-        'APP': {
-            'client_id': 'Ov23likM4ohyCz3zd0z4',
-            'secret': 'e7bc2b4a207a877b283e49b4abae704c8324dd5d',
-            'key': ''
-        }
-    }
-}
 WSGI_APPLICATION = 'Authentication_System.wsgi.application'
 
 # Database

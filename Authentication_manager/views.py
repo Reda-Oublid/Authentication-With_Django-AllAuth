@@ -6,8 +6,7 @@ from allauth.account.views import SignupView
 # Create your views here.
 
 
-class Signup_View(SignupView):
-    template_name = 'account/signup.html'
+
 
 
 def home(request):
