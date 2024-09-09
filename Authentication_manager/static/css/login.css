@@ -5,18 +5,12 @@
 
 
 /*---------------------------------Main Area---------------------------------*/
-*{
-	box-sizing: border-box;
-	margin:0;
-	padding:0;
-	background-color:transparent;
-}
 
 .lgcontainer{
-	margin: 3.5% auto;
+	margin: 1% auto;
 	padding: 0;
-	width: 60%;
-	height:85vh;
+	width: 80%;
+	height:100%;
 	display: flex;
 	justify-content: space-between;
 	align-items:center;
@@ -32,15 +26,21 @@
 	width: 60%;
 	height: 100%;
 	margin:0;
-	padding:0 0 15% 0;
+	padding:5% 0 15% 0;
 	border-left: none;
 	border-radius: 90px 40px  40px 90px;
 	display: flex;
 	align-items: center;
+	justify-content: space-around;
 	flex-direction: column;
 
 }
-
+/*--------------------form errors------------------- */
+.form-errors {
+	color: white;
+	font-weight: lighter;
+}
+/*------------------------form --------------------- */
 .login_container form{
 	width: 100%;
 	margin-top: 10%;
@@ -190,16 +190,15 @@
 }
 .social_icons a:hover {
     color: #c7c7c7;
-	background-color: #000815;
+	background-color: rgba(26, 26, 26, 0.89);
 }
 /*----------------------------------------Left Area--------------------------------------------------------*/
 .left{
 	width: 40%;
 	height: 100%;
-	padding-right: 10px;
-	padding-bottom: 30%;
+	padding: 5% 10px 30% 0;
 	display: flex;
-	justify-content: space-between;
+	justify-content: space-around;
 	align-items: center;
 	flex-direction: column;
 	border-radius: 45px 90px 90px 45px;

@@ -14,11 +14,13 @@
 		</div>
 		<div class="login_container">
             <div><h1>Login<hr></h1></div>
-            {% if form.errors %}
-                <p>Invalid username or password.</p>
-            {% endif %}
             <div class="lgbuttons">
                 <a href="{% url 'account_signup' %}">Don't Have an Account? Register!</a>
+            </div>
+            <div class="form-errors">
+                {% if form.errors %}
+                    <p>Invalid username or password. : error {{ form.errors.as_ul }}</p>
+                {% endif %}
             </div>
 			<form method="post" action="{% url 'account_login' %}">
                 {% csrf_token %}
