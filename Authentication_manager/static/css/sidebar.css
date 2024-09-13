@@ -32,7 +32,9 @@
 #sidebar > ul > li:first-child{
   display: flex;
   justify-content: flex-end;
-  margin-bottom: 16px;
+  margin-top: 3px;
+  height: 45px;
+  z-index: 10;
   .logo{
     font-weight: 600;
   }

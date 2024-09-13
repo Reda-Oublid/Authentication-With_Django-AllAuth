@@ -23,7 +23,7 @@ body{
             "sidebar main-content"
             "footer main-content";
     grid-template-columns: 250px 1fr;
-    grid-template-rows: 10% 1fr 10%;
+    grid-template-rows: 7% 1fr 8%;
 
         }
 
@@ -31,23 +31,25 @@ body{
     grid-area: navbar;
     width: 100%;
     position: sticky;  /* Fixes the navbar at the top */
-     /* Positions it at the very top of the page */
+    top : 0;/* Positions it at the very top of the page */
     border-bottom: 1px solid #42434a;
-    background-color: #11121a;
+    background-color: rgba(14, 15, 23, 0.86);
     z-index: 1000;  /* Ensures the navbar stays above other elements */
 
         }
 
 .sidebar {
     grid-area: sidebar;
-    position: sticky;
+    position: fixed;
+    left: 0;
+    top:7%;
     height: 100% ;
     
         }
 
 .main-content {
     grid-area: main-content;
-    padding: 20px;
+    padding: 0 15px;
     background-color: transparent;
     width: 100%;
     min-height: 100vh;
@@ -55,10 +57,12 @@ body{
 
 .footer {
     grid-area: footer;
+    border-right: 1px solid #42434a;
     border-top: 1px solid #42434a;
     background-color: #11121a;
     color: white;
     text-align: center;
     padding: 10px;
     position: sticky;
+    bottom: 0;
         }

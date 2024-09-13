@@ -39,21 +39,22 @@
         font-weight: bold;
     }
 
-    button{
+    .logout-btn{
         margin: 20px;
-        padding: 10px 20px;
+        padding: 10px 30px;
         border: none;
         cursor: pointer;
-        background-color:  dodgerblue;
+        background-color: #ef2637;
         color: white;
         border-radius:  4px 50px 4px 50px;
-        font-weight: bold;
+        font-size: large;
+        font-weight:900;
         transition: all 0.3s ease-in-out 0s;
     }
-    button:hover {
-	    background-color: deepskyblue;
+    .logout-btn:hover {
+	    background-color: #c20505;
 	    color:white ;
-        box-shadow:-4px 4px 8px #2cafd7;
+        box-shadow:-4px 4px 8px #f16393;
     }
     .cancel-button {
 	    text-decoration: none;
@@ -68,7 +69,7 @@
     }
 
     .cancel-button:hover {
-	    background-color: deepskyblue;
+	    background-color: #1770c7;
 	    color:white ;
         box-shadow:-4px 4px 8px #2cafd7;
     }

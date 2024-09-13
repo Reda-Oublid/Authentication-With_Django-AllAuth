@@ -1,33 +1,49 @@
-<!doctype html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>profile</title>
-</head>
-<body>
-    {% include 'partials/navbar.html' %}
+{% extends "base.html" %}
+{% load static %}
+{% block title %}Profile{% endblock %}
+{% block extra_css %}
+    <link href="{% static 'css/profile/profile.css' %}" rel="stylesheet">
+{% endblock %}
+{% block content %}
+<div class="profile-container">
 
-    <h1>Profile</h1>
-    <p>username: {{ user.username }} </p>
-    <p>Full Name: {{ user.first_name }} {{ user.last_name }}</p>
-    <p>Bio: {{ profile.bio }}</p>
-    <p>Phone Number: {{ profile.phone_number }}</p>
-    <p>User avatar : {{ profile.avatar }}  </p>
-    <p>Email: {{ user.email }}</p>
-    <img src="{{ profile.avatar }}" alt="user_avatar"/>
-    <p>Joined: {{ user.date_joined }}</p>
-    <p>Last Login: {{ user.last_login }}</p>
+    <div class="profile-bio">
+        <img class="profile-avatar" src="{{profile.avatar.url }} " alt="user_avatar"/>
+        <h2>{{ user.username }} </h2>
+        <h5>{{ profile.bio }}</h5>
+        <div class="profile-bio-buttons">
+            <a class="flw-btn" href="#">Follow</a>
+            <a class="msg-btn" href="#">Contact</a>
+        </div>
 
-    {% if user.socialaccount_set.all %}
-        <h2>Social Accounts</h2>
-        <ul>
-            {% for account in user.socialaccount_set.all %}
-                <li>{{ account.provider_name }}: {{ account.extra_data.username }}</li>
-            {% endfor %}
-        </ul>
-    {% endif %}
-</body>
-</html>
+    </div>
+
+    <div class="profile-description">
+        <div class="description-titles">
+            <h3>Full Name : </h3> <p>{{ user.first_name }} {{ user.last_name }}</p>
+        </div>
+        <div class="description-titles">
+            <h3>Email : </h3> <p>{{ user.email }}</p>
+        </div>
+        <div class="description-titles">
+            <h3>Phone :</h3> <p>{{ profile.phone_number }}</p>
+        </div>
+        <div class="description-titles">
+            <h3>BirthDay :</h3> <p>{{ profile.birthdate }}</p>
+        </div>
+         <div class="description-titles">
+            <h3>Country :</h3> <p>{{ profile.country }}</p>
+        </div>
+
+        <div class="description-titles">
+            <h3>Joined : </h3> <p>{{ user.date_joined }}</p>
+        </div>
+    </div>
+    <div class="profile-urls">
+        <h5>Here Put ure Urls (github,linkedIn,Twitter ...)</h5>
+    </div>
+    <div class="profile-posts">
+
+    </div>
+</div>
+{% endblock %}

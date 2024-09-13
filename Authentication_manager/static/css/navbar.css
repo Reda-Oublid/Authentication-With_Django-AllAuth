@@ -48,10 +48,10 @@
 .logo{
 	background-color: transparent;
 	cursor:pointer;
-	font-family: "Charmonman";
+	font-family: "Charmonman" ,serif !important;
 	padding: 5px 5px;
-	font-weight:bolder;
-	font-size:42px;
+	font-weight:bolder!important;
+	font-size:30px!important;
 	font-style: oblique;
 	text-shadow:3px 7px 6px dodgerblue;
 	transition: all 0.5s ease 0s;

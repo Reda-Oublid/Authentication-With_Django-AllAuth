@@ -12,7 +12,7 @@
         <form method="post" action="{% url 'account_logout' %}">
             {% csrf_token %}
             {{ redirect_field }}
-            <button type="submit">Yes, Logout</button>
+            <button class="logout-btn" type="submit">Logout</button>
             <a href="{% url 'home' %}" class="cancel-button">Cancel</a>
         </form>
 
