@@ -7,7 +7,8 @@
   --accent-clr: #5e63ff;
   --secondary-text-clr: #b0b3c1;
 }
-
+/*----------------------This CSS FILE USES THE ID'S AS SELECTORS----------------------------- */
+/*---------------SIDEBAR STYLE WHEN EXPANDED-----------------------*/
 #sidebar{
   box-sizing: border-box;
   height: 100%;
@@ -22,13 +23,18 @@
   overflow: hidden;
   text-wrap: nowrap;
 }
-#sidebar.close{
+
+/*------------------------Styles for the sidebar when it's in a closed state------------------------ */
+#sidebar.close {
   padding: 5px;
   width: 60px;
 }
+
+/* ------------------------Styles for the sidebar elements------------------------ */
 #sidebar ul{
   list-style: none;
 }
+
 #sidebar > ul > li:first-child{
   display: flex;
   justify-content: flex-end;
@@ -39,6 +45,7 @@
     font-weight: 600;
   }
 }
+
 #sidebar ul li.active a{
   color: var(--accent-clr);
 
@@ -83,9 +90,11 @@
     overflow: hidden;
   }
 }
+
 #sidebar .sub-menu.show{
   grid-template-rows: 1fr;
 }
+
 .dropdown-btn svg{
   transition: 200ms ease;
 }
@@ -111,8 +120,9 @@
   background-color: var(--hover-clr);
 }
 
-
+/*------------------------Make the Sidebar responsive------------------------*/
 @media(max-width: 800px){
+
   body{
     grid-template-columns: 1fr;
   }
@@ -125,7 +135,7 @@
   }
   #sidebar{
     height: 60px;
-    width: 100%;
+    width: 100%!important;/*AVOID taking the 60 px's width that used when the sidebar is closed */
     border-right: none;
     border-top: 1px solid var(--line-clr);
     padding: 0;

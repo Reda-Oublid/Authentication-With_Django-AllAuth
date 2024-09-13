@@ -8,25 +8,49 @@ html{
   font-family: Poppins, 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   line-height: 1.5rem;
 }
+
 body{
     background-image: url("../assets/magical-forest-3840x2160-14971.jpg");
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-attachment: fixed;
+}
 
+/*the Main Grid If the user Not yet authenticated */
+.grid-container-register{
+    display: grid;
+    grid-template-areas:
+            " navbar"
+            " main-content"
+            " footer";
+    grid-template-columns: 1fr;
+    grid-template-rows: 8% 1fr 8%;
 
 }
-.grid-container {
+/* Track the side bar size so that the main content fit the free space */
+/*the Main Grid If the sidebar is expanded (size 250px) */
+.grid-container-expanded-sidebar {
     display: grid;
     grid-template-areas:
             "navbar navbar"
             "sidebar main-content"
-            "footer main-content";
+            "footer footer";
     grid-template-columns: 250px 1fr;
+    grid-template-rows: 7% 1fr 8%;
+    transition: 300ms ease-in-out;
+        }
+/*the Main Grid If the sidebar is collapsed (size 60px) */
+.grid-container-collapsed-sidebar {
+    display: grid;
+    grid-template-areas:
+            "navbar navbar"
+            "sidebar main-content"
+            "footer footer";
+    grid-template-columns: 60px 1fr;
     grid-template-rows: 7% 1fr 8%;
 
         }
-
+/*-------------------The Navbar Settings---------------------*/
 .navbar-container {
     grid-area: navbar;
     width: 100%;
@@ -36,8 +60,9 @@ body{
     background-color: rgba(14, 15, 23, 0.86);
     z-index: 1000;  /* Ensures the navbar stays above other elements */
 
-        }
+}
 
+/*-------------------The Sidebar Settings---------------------*/
 .sidebar {
     grid-area: sidebar;
     position: fixed;
@@ -45,16 +70,17 @@ body{
     top:7%;
     height: 100% ;
     
-        }
-
+}
+/*-------------------The Main Content Settings---------------------*/
 .main-content {
     grid-area: main-content;
     padding: 0 15px;
     background-color: transparent;
     width: 100%;
     min-height: 100vh;
+    margin-bottom:1.5em;
         }
-
+/*-------------------The Footer Settings---------------------*/
 .footer {
     grid-area: footer;
     border-right: 1px solid #42434a;
@@ -64,5 +90,4 @@ body{
     text-align: center;
     padding: 10px;
     position: sticky;
-    bottom: 0;
         }

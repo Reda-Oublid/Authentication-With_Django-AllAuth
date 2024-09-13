@@ -22,7 +22,13 @@
     {% block extra_css %}{% endblock %}
 </head>
 <body>
-<div class="grid-container">
+<div
+        {% if user.is_authenticated %}
+        class="grid-container-expanded-sidebar" id="grid-container"
+        {% else %}
+        class="grid-container-register" id="grid-container"
+        {% endif %}
+>
  <!-- Navbar -->
     <div class="navbar-container">
         {% include 'partials/navbar.html' %}

@@ -1,6 +1,6 @@
 .profile-container{
     margin: 1em auto;
-    background-color: rgb(200, 215, 229);
+    background-color: transparent;
     width: 100%;
     height: 100%;
     border-radius: 8px;
@@ -114,6 +114,7 @@
     border-bottom: 1px solid #42434a;
     background-color: #F1F1F1;
     color: #090142;
+    overflow-y: scroll;
 }
 @media(max-width: 800px){
     .profile-container{
