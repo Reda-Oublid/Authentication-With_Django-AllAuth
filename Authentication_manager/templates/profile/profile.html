@@ -19,25 +19,48 @@
     </div>
 
     <div class="profile-description">
-        <div class="description-titles">
-            <h3>Full Name : </h3> <p>{{ user.first_name }} {{ user.last_name }}</p>
-        </div>
-        <div class="description-titles">
-            <h3>Email : </h3> <p>{{ user.email }}</p>
-        </div>
-        <div class="description-titles">
-            <h3>Phone :</h3> <p>{{ profile.phone_number }}</p>
-        </div>
-        <div class="description-titles">
-            <h3>BirthDay :</h3> <p>{{ profile.birthdate }}</p>
-        </div>
-         <div class="description-titles">
-            <h3>Country :</h3> <p>{{ profile.country }}</p>
+        <div class="description-view" id="description-view">
+            <div class="description-titles">
+                <h3>Full Name : </h3> <p>{{ user.first_name }} {{ user.last_name }}</p>
+            </div>
+            <div class="description-titles">
+                <h3>Email : </h3> <p>{{ user.email }}</p>
+            </div>
+            <div class="description-titles">
+                <h3>Phone :</h3> <p>{{ profile.phone_number }}</p>
+            </div>
+            <div class="description-titles">
+                <h3>Birthday :</h3> <p>{{ profile.birthdate}}</p>
+            </div>
+            <div class="description-titles">
+                <h3>Country :</h3> <p>{{ profile.country }}</p>
+            </div>
+            <div class="description-titles">
+                <h3>Joined : </h3> <p>{{ user.date_joined }}</p>
+            </div>
+            <button id="edit-btn" onclick="showEditForm()">Edit</button>
         </div>
 
-        <div class="description-titles">
-            <h3>Joined : </h3> <p>{{ user.date_joined }}</p>
+        <div id="description-edit" style="display: none;" >
+
+            <form method="POST" action="{% url 'profile_edit' profile.user.username %}">
+                {% csrf_token %}
+                First Name: <input type="text" id="first_name"  name="first_name" value="{{ user.first_name }}">
+                Last Name: <input type="text" id="last_name"  name="last_name" value="{{ user.last_name }}">
+                Phone Number: <input type="text" id="phone_number"  name="phone_number" value="{{ profile.phone_number }}">
+                Birthdate: <input type="date" id="birthdate"  name="birthdate"
+                                  value="{{ profile.birthdate|date:'Y-m-d' }}">
+
+                Country: <input type="text" id="country" name="country" value="{{ profile.country }}">
+
+                <div class="buttons">
+                    <button type="submit" id="description-edit-btn">Save</button>
+                    <button type="button" id="description-edit-btn" onclick="cancelEdit()">Cancel</button>
+                </div>
+            </form>
+
         </div>
+    
     </div>
     <div class="profile-urls">
         <h5>Here Put ure Urls (github,linkedIn,Twitter ...)</h5>
@@ -46,4 +69,5 @@
 
     </div>
 </div>
+    {% block extra_js %}<script src="{% static 'js/profile/profile.js' %}"></script>{% endblock %}
 {% endblock %}

@@ -58,6 +58,15 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'Authentication_System.urls'
+
+# login url for login required decorator
+# the default login url is /accounts/login
+# must be changed if you want to use  allauth
+LOGIN_URL = '/account/login/'
+
+# THE EMAIL IS REQUIRED WITH THE USER SIGNUP
+ACCOUNT_EMAIL_REQUIRED = True
+
 # Redirect after successful signup
 ACCOUNT_SIGNUP_REDIRECT_URL = '/'  # or the URL name of your homepage
 
@@ -67,6 +76,7 @@ LOGIN_REDIRECT_URL = '/'  # or the URL name of your homepage
 # Redirect after successful logout
 LOGOUT_REDIRECT_URL = '/'  # or the URL name of your landing page
 # Email verification
+
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 TEMPLATES = [
     {

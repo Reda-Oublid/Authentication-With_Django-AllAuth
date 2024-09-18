@@ -14,12 +14,12 @@
 		</div>
 		<div class="login_container">
             <div><h1>SignUp<hr></h1></div>
-            {% if form.errors %}
-                <h5 style="color: white;">{{ form.errors }}</h5>
-            {% endif %}
             <div class="lgbuttons">
                 <a href="{% url 'account_login' %}">Already  Have an Account? Login!</a>
             </div>
+            {% if form.errors %}
+                <p style="font-weight: lighter; color: red">{{ form.errors }}</p>
+            {% endif %}
 			<form method="post" action="{% url 'account_signup' %}">
                 {% csrf_token %}
 				<div class="user__field">

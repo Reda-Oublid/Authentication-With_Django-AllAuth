@@ -36,7 +36,7 @@ body{
             "sidebar main-content"
             "footer footer";
     grid-template-columns: 250px 1fr;
-    grid-template-rows: 7% 1fr 8%;
+    grid-template-rows: 5em 1fr 6em;
     transition: 300ms ease-in-out;
         }
 /*the Main Grid If the sidebar is collapsed (size 60px) */
@@ -47,7 +47,7 @@ body{
             "sidebar main-content"
             "footer footer";
     grid-template-columns: 60px 1fr;
-    grid-template-rows: 7% 1fr 8%;
+    grid-template-rows: 5em 1fr 6em;
 
         }
 /*-------------------The Navbar Settings---------------------*/
@@ -67,7 +67,7 @@ body{
     grid-area: sidebar;
     position: fixed;
     left: 0;
-    top:7%;
+    top:5em;
     height: 100% ;
     
 }

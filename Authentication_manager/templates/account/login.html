@@ -19,7 +19,7 @@
             </div>
             <div class="form-errors">
                 {% if form.errors %}
-                    <p>Invalid username or password. : error {{ form.errors.as_ul }}</p>
+                    <p style="font-weight: lighter;color: red">Invalid username or password. : error {{ form.errors.as_ul }}</p>
                 {% endif %}
             </div>
 			<form method="post" action="{% url 'account_login' %}">
