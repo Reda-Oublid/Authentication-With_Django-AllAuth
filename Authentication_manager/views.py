@@ -2,8 +2,10 @@ from datetime import datetime
 
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
+from django.db.models.signals import post_save
 from django.shortcuts import render, get_object_or_404, redirect
 from .models import Profile
+from django.dispatch import receiver
 from allauth.account.views import SignupView
 
 
@@ -37,3 +39,9 @@ def profile_edit(request, username):
         return redirect('profile', username=username)
     else:
         return render(request, 'profile/profile.html', {'profile': profile})
+
+
+def set_profile(request, username):
+    pass
+
+
