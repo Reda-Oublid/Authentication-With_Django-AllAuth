@@ -4,6 +4,8 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
 from django.db.models.signals import post_save
 from django.shortcuts import render, get_object_or_404, redirect
+
+from .forms import ProfileForm
 from .models import Profile
 from django.dispatch import receiver
 from allauth.account.views import SignupView
@@ -41,7 +43,16 @@ def profile_edit(request, username):
         return render(request, 'profile/profile.html', {'profile': profile})
 
 
-def set_profile(request, username):
-    pass
+def profile_set(request):
+    profile, created = Profile.objects.get_or_create(user=request.user)
 
+    if request.method == 'POST':
+        profile_form = ProfileForm(request.POST, request.FILES, instance=profile)
+        if profile_form.is_valid():
+            profile_form.save()
+            return redirect('profile', username=request.user.username)
+    else:
+        profile_form = ProfileForm(instance=profile)
+
+    return render(request, 'profile/profile_set.html', {'profile_form': profile_form})
 

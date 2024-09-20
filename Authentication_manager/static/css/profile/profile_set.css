@@ -1,0 +1,27 @@
+.profile-form-container{
+    margin: 4em auto;
+    padding: 1em;
+    background-color: rgba(95, 158, 160, 0.68);
+    border-radius: 6px;
+    width: 75%;
+    max-width:100em;
+}
+.profile-form-container .profile-set-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 1em;
+    width: 100%;
+}
+.profile-form-container .profile-set-form label {
+    display: block;
+    font-weight: bold;
+    background-color:rebeccapurple;
+}
+.profile-form-container .profile-set-form input, .profile-form-container .profile-set-form textarea {
+    margin: 10px;
+    padding: 0.5em 1em;
+    width: 60%;
+    border-radius: 4px;
+}

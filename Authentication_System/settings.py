@@ -12,6 +12,8 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 import os
 from pathlib import Path
 
+from django.urls import reverse_lazy
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -68,7 +70,8 @@ LOGIN_URL = '/account/login/'
 ACCOUNT_EMAIL_REQUIRED = True
 
 # Redirect after successful signup
-ACCOUNT_SIGNUP_REDIRECT_URL = '/'  # or the URL name of your homepage
+ACCOUNT_SIGNUP_REDIRECT_URL = reverse_lazy('profile_set')  # or the URL name of your homepage
+# This will ensure that the URL generated for the redirection is an absolute URL and not appended to the signup URL.
 
 # Redirect after successful login
 LOGIN_REDIRECT_URL = '/'  # or the URL name of your homepage
